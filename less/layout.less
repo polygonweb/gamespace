@@ -1,0 +1,177 @@
+@gutter: 60;
+
+
+html, body {
+    height: 100%;
+}
+
+
+.l-container {
+    width: unit(1000/16, em);
+    margin: 0 auto;
+    padding: 0 unit(@gutter/16, em);
+}
+
+
+// media object
+//.l-mo
+//    .l-mo__img
+//    .l-mo__content
+.l-mo {
+    
+    .u-cf();
+    
+    &__img {
+        float: left;
+    }
+    
+    &__content {
+        overflow: hidden;
+    }
+    
+    &--inverse &__img {
+        float: right;
+    }
+}
+
+
+.layout {
+//	overflow: hidden;
+    
+//    /* 2 columns layout */
+	&--cols_2 {
+        
+        @side-col-width: 303;
+        
+        & .layout__main-col-outer {
+			float: left;
+			width: 100%;
+			margin: 0 unit(-(@side-col-width + @gutter)/16, em) 0 0; /*(303 + 30)px/16*/
+		}
+        
+		& .layout__main-col {
+			margin: 0 unit((@side-col-width + @gutter)/16, em) 0 0; /*(303 + 30)px/16*/
+		}
+        
+		& .layout__side-col {
+			float: right;
+			width: unit(@side-col-width/16, em); /* 303px/16 */
+		}
+        
+        &--inverse {
+            & .layout__main-col-outer {
+                float: right;
+                width: 100%;
+                margin: 0 0 0 unit(-(@side-col-width + @gutter)/16, em); /*(303 + 30)px/16*/
+            }
+
+            & .layout__main-col {
+                margin: 0 0 0 unit((@side-col-width + @gutter)/16, em); /*(303 + 30)px/16*/
+            }
+
+            & .layout__side-col {
+                float: left;
+                width: unit(@side-col-width/16, em); /* 303px/16 */
+            }
+        }
+    }
+    
+}
+//<div id="container">
+//  <div id="content">
+//    <section id="left">
+//      Фиксированная левая сторона
+//    </section>
+//    <section id="main">
+//      Резиновое основное поле
+//    </section>
+//  </div>
+//</div>
+//<section id="sidebar">
+//  Фиксированная правая сторона
+//</section>	
+//#container {		/* Первая обертка */
+//  width: 100%;
+//  float: left;
+//  margin-right: -297px;
+//}
+//#content {		/* Вторая обертка */
+//  margin-right: 297px;
+//}
+//#left {			/* Левая колонка*/
+//  width: 200px;		/* ширина 200px */
+//  float: left;
+//}
+//#main {			/* Основная колонка */
+//  margin-left: 300px;	/* ширина 100% - 200px - 300px */
+//}
+//#sidebar {		/* Правая колонка */
+//  width: 297px;		/* ширина - 300px */
+//  float: right;
+//}
+
+
+.l-sticky-footer-fix {
+    min-height: 100%;
+//    height: 100%;
+    
+    &:after {
+        content: '';
+        display: table;
+        height: unit(89/16, em);
+//        clear: both;
+    }
+}
+
+.l-footer {
+    font-size: 11px;
+//    margin-top: unit(-89/11, em);
+//    margin-bottom: unit(27/11, em);
+    margin: unit(-89/11, em) 0 unit(27/11, em);
+    padding: 0 unit(21/11, em);
+    height: unit(62/11, em);
+    line-height: unit(62/11, em);
+    
+    clear: both;
+    
+    &__copy {
+        float: left;
+    }
+    
+    &__social {
+        float: right;
+        
+        &__icon {
+            margin-left: unit(7/11, em);
+        }
+    }
+}
+
+
+.l-header {
+    
+    padding: unit(50/16, em) 0 unit(60/16, em);
+    
+    &__logo {
+        float: left;
+        position: relative;
+        left: unit(-18/16, em);
+        top: unit(-15/16, em);
+    }
+    
+    &__profile {
+        float: right;
+        position: relative;
+    }
+}
+
+
+.l-nav {
+    margin-bottom: unit(31/16, em);
+}
+
+
+.l-search-form {
+//    margin-bottom: unit(25/16, em);
+    margin-bottom: unit(40/16, em);
+}

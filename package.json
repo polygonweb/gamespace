@@ -1,0 +1,11 @@
+{
+  "name": "gamespace",
+  "version": "1.0.0",
+  "scripts": {
+    "styles": "lessc less/main.less css/main.css"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "less": "^2.7.2"
+  }
+}
